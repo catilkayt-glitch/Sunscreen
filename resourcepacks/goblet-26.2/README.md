@@ -1,16 +1,18 @@
 # Goblet Resource Pack — Minecraft Java 26.2
 
-This directory is for the custom goblet model for the Minestom project.
+A client-mod-free item model pack for the Minestom project.
 
-## Contents
-Download the generated ZIP from the conversation and extract the contents of its `resourcepack/` folder here so that `pack.mcmeta` and `assets/` are directly inside this directory.
+## Files in this directory
 
-The resource pack defines a custom item model (`goblet:goblet`) intended for a server-side `ItemDisplay`. It does **not** replace the vanilla Copper Golem's own entity geometry; vanilla clients without mods cannot load arbitrary resource-pack geometry for mob entities. Minestom can display the goblet model as an `ItemDisplay` and implement movement/behavior server-side.
+- `pack.mcmeta` — resource-pack format metadata for Java 26.2 (resource pack format 88).
+- `assets/goblet/items/goblet.json` — item definition with model ID `goblet:goblet`.
+- `assets/goblet/models/item/goblet.json` — blockbench-style cuboid item geometry for a chalice/goblet.
+- `assets/goblet/textures/item/goblet.png` — copper-gold pixel texture.
 
-## Setup
-1. Put `pack.mcmeta` and `assets/` in this directory's root.
-2. Zip the contents of this directory (not the containing folder).
-3. Host the ZIP at a direct HTTPS URL.
-4. Send it to clients through Minestom's server resource-pack mechanism.
+## Minestom usage
 
-Note: this commit adds the setup instructions only. The model JSON and PNG binary texture still need to be uploaded from the provided ZIP.
+Use an `ItemDisplay` and set its item stack's item-model component to `goblet:goblet`. Deliver this resource pack to clients through Minestom using a direct HTTPS URL and the ZIP's SHA-1 hash.
+
+## Important limitation
+
+This pack does not replace the vanilla Copper Golem's built-in entity geometry. Vanilla clients without mods cannot replace an arbitrary mob's 3D geometry through a resource pack alone. For a mod-free server, use the goblet model on an `ItemDisplay` and implement mob-like movement/behavior server-side in Minestom.
