@@ -1,6 +1,7 @@
 {
   "pack": {
-    "pack_format": 87,
-    "description": "Minestom Goblet item model — Minecraft Java 26.2"
+    "description": "Minestom Goblet item model — Minecraft Java 26.2",
+    "min_format": 88,
+    "max_format": 88
   }
 }
